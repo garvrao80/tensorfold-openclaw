@@ -1,0 +1,125 @@
+.tf-dashboard {
+  max-width: 1100px;
+  margin: auto;
+  padding: 32px 24px;
+  color: var(--text, #e5e7eb);
+  font:
+    14px/1.5 system-ui,
+    sans-serif;
+}
+.tf-dashboard header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.tf-dashboard h1 {
+  font-size: 32px;
+  letter-spacing: -1px;
+  margin: 0;
+}
+.tf-eyebrow {
+  color: #2dd4bf;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+.tf-endpoint {
+  color: var(--muted, #94a3b8);
+  overflow-wrap: anywhere;
+}
+.tf-dashboard button,
+.tf-dashboard select {
+  border: 1px solid var(--border, #334155);
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: var(--bg-accent, #17212f);
+  color: inherit;
+  font: inherit;
+}
+.tf-dashboard button {
+  cursor: pointer;
+}
+.tf-dashboard button:focus-visible,
+.tf-dashboard select:focus-visible {
+  outline: 2px solid #2dd4bf;
+  outline-offset: 3px;
+}
+.tf-dashboard button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.tf-status {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--bg-accent, #17212f);
+}
+.tf-status[data-state="ok"] {
+  border-left: 3px solid #2dd4bf;
+}
+.tf-status[data-state="unavailable"] {
+  border-left: 3px solid #fb923c;
+}
+.tf-model {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0;
+}
+.tf-model label {
+  font-weight: 650;
+}
+.tf-model select {
+  flex: 1;
+  min-width: 180px;
+  max-width: 100%;
+}
+.tf-model-note {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--muted, #94a3b8);
+}
+.tf-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+.tf-metrics article {
+  border: 1px solid var(--border, #334155);
+  border-radius: 10px;
+  padding: 18px;
+}
+.tf-metrics span {
+  display: block;
+  color: var(--muted, #94a3b8);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.tf-metrics strong {
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+.tf-notes,
+.tf-dashboard footer {
+  color: var(--muted, #94a3b8);
+  font-size: 12px;
+  margin-top: 24px;
+}
+.tf-dashboard footer {
+  border-top: 1px solid var(--border, #334155);
+  padding-top: 18px;
+}
+@media (max-width: 520px) {
+  .tf-dashboard {
+    padding: 20px 12px;
+  }
+  .tf-dashboard h1 {
+    font-size: 26px;
+  }
+  .tf-model button {
+    width: 100%;
+  }
+}

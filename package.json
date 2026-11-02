@@ -1,0 +1,67 @@
+{
+  "name": "@garvrao80/tensorfold-openclaw",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TensorFold model provider and native OpenClaw dashboard",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garvrao80/tensorfold-openclaw.git"
+  },
+  "bugs": {
+    "url": "https://github.com/garvrao80/tensorfold-openclaw/issues"
+  },
+  "homepage": "https://github.com/garvrao80/tensorfold-openclaw#readme",
+  "files": [
+    "dist",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=24.22.1 <25 || >=26.12.1"
+  },
+  "peerDependencies": {
+    "openclaw": "2026.10.9"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@openclaw/ai": "2026.10.9",
+    "@types/jsdom": "27.0.0",
+    "@types/node": "24.10.0",
+    "esbuild": "0.25.12",
+    "jsdom": "27.1.0",
+    "openclaw": "2026.10.9",
+    "prettier": "3.6.2",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "format:check": "prettier --check src test scripts docs README.md package.json openclaw.plugin.json tsconfig.json .github",
+    "check": "npm run typecheck && npm run build && npm test"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "providers": [
+      "tensorfold"
+    ],
+    "compat": {
+      "pluginApi": "2026.10.9",
+      "minGatewayVersion": "2026.10.9"
+    },
+    "build": {
+      "openclawVersion": "2026.10.9",
+      "pluginSdkVersion": "2026.10.9"
+    }
+  }
+}
